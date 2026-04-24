@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Sonidero & Helados | Música y Sabor</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome (opcional pero útil para iconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Botón modo nocturno/claro -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Cambiar modo claro/oscuro">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <header>
+        <h1>🎧 Sonidero & 🍦 Helados</h1>
+        <p>Música que mueve, helados que enamoran</p>
+    </header>
+
+    <main>
+        <!-- SECCIÓN SONIDERO (solo) -->
+        <section class="package sonidero" id="sonidero">
+            <div class="section-header">
+                <h2><i class="fas fa-headphones"></i> Sonidero</h2>
+                <span class="badge">Exclusivo</span>
+            </div>
+            <p class="description">El mejor sonido para tus eventos: fiestas, quinceañeras, bodas y más. Equipo profesional, mezclas únicas y la energía que necesitas.</p>
+            
+            <!-- Zona de imágenes -->
+            <div class="media-section">
+                <h3>📸 Galería de imágenes</h3>
+                <div class="gallery" data-type="image" data-folder="imagenes/sonidero/">
+                    <!-- Las imágenes se insertarán dinámicamente con JS -->
+                </div>
+            </div>
+
+            <!-- Zona de videos -->
+            <div class="media-section">
+                <h3>🎥 Videos destacados</h3>
+                <div class="gallery" data-type="video" data-folder="videos/sonidero/">
+                    <!-- Videos dinámicos -->
+                </div>
+            </div>
+
+            <div class="pricing">
+                <h3>💰 Costos</h3>
+                <p><strong>Paquete básico:</strong> $4,500 MXN (4 horas, sonido profesional+DJ)</p>
+                <p><strong>Paquete premium:</strong> $7,500 MXN (6 horas, incluye luces y pantalla)</p>
+                <p><i class="fab fa-whatsapp"></i> Cotiza tu evento especial</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN HELADOS (solo) -->
+        <section class="package helados" id="helados">
+            <div class="section-header">
+                <h2><i class="fas fa-ice-cream"></i> Helados</h2>
+                <span class="badge">Exclusivo</span>
+            </div>
+            <p class="description">Helados artesanales, cremosos y con sabores únicos. Desde clásicos hasta combinaciones sorprendentes. Perfectos para cualquier ocasión.</p>
+            
+            <div class="media-section">
+                <h3>📸 Galería de imágenes</h3>
+                <div class="gallery" data-type="image" data-folder="imagenes/helados/">
+                </div>
+            </div>
+
+            <div class="media-section">
+                <h3>🎥 Videos de preparación</h3>
+                <div class="gallery" data-type="video" data-folder="videos/helados/">
+                </div>
+            </div>
+
+            <div class="pricing">
+                <h3>💰 Costos</h3>
+                <p><strong>Vaso sencillo:</strong> $45 MXN</p>
+                <p><strong>Cono doble:</strong> $65 MXN</p>
+                <p><strong>Evento para 50 personas:</strong> $2,800 MXN (barra libre de helados)</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN AMBOS: Sonidero + Helados (paquete combinado) -->
+        <section class="package ambos" id="ambos">
+            <div class="section-header">
+                <h2><i class="fas fa-handshake"></i> Sonidero + Helados</h2>
+                <span class="badge combo">COMBO ESPECIAL</span>
+            </div>
+            <p class="description">¡La combinación perfecta! Música en vivo + degustación de helados para tus invitados. Ideal para ferias, cumpleaños infantiles o eventos corporativos.</p>
+            
+            <div class="media-section">
+                <h3>📸 Momentos Sonidero & Helados</h3>
+                <div class="gallery" data-type="image" data-folder="imagenes/ambos/">
+                </div>
+            </div>
+
+            <div class="media-section">
+                <h3>🎥 Video promocional</h3>
+                <div class="gallery" data-type="video" data-folder="videos/ambos/">
+                </div>
+            </div>
+
+            <div class="pricing">
+                <h3>💰 Costo del paquete combinado</h3>
+                <p><strong>Pack Fiesta Total:</strong> $10,999 MXN</p>
+                <p>Incluye: 5 horas de sonidero profesional + 100 helados surtidos + 1 mesa dulce. ¡Ahorras más de $1,500!</p>
+                <p class="contact-wa"><i class="fab fa-whatsapp"></i> Reserva ahora con el 20% de anticipo</p>
+            </div>
+        </section>
+
+        <!-- Botón flotante de WhatsApp -->
+        <a href="https://wa.me/525591461227?text=Hola%2C%20vi%20su%20p%C3%A1gina%20de%20Sonidero%20y%20Helados%20y%20me%20interesa%20cotizar" 
+           class="whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span>¡Contáctanos!</span>
+        </a>
+    </main>
+
+    <footer>
+        <p>© 2025 Sonidero & Helados - Música y sabor para todos</p>
+        <p>WhatsApp: <strong>55 9146 1227</strong></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

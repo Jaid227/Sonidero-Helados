@@ -1,0 +1,241 @@
+/* RESET y variables globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.2s ease, border-color 0.2s;
+}
+
+:root {
+    --bg-body: #f9f9f9;
+    --text-primary: #222;
+    --card-bg: #ffffff;
+    --card-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    --border-color: #e0e0e0;
+    --badge-sonidero: #2c3e66;
+    --badge-helados: #d47b45;
+    --badge-combo: #9b2c2c;
+    --whatsapp: #25D366;
+    --header-footer: #2c3e50;
+}
+
+body.dark {
+    --bg-body: #121212;
+    --text-primary: #f0f0f0;
+    --card-bg: #1e1e2a;
+    --card-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    --border-color: #333;
+    --header-footer: #0a0a0f;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    padding: 1rem;
+}
+
+/* Botón modo */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    padding: 10px 16px;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 1.2rem;
+    box-shadow: var(--card-shadow);
+    color: var(--text-primary);
+}
+.theme-toggle i {
+    pointer-events: none;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 0 1.5rem;
+    background: var(--header-footer);
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    color: white;
+}
+header h1 { font-size: 2rem; }
+header p { opacity: 0.9; }
+
+/* Secciones de paquetes */
+.package {
+    background: var(--card-bg);
+    border-radius: 1.5rem;
+    padding: 1.8rem;
+    margin-bottom: 2.5rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+.section-header h2 { font-size: 1.8rem; margin: 0; }
+.badge {
+    background: #aaa;
+    padding: 0.2rem 0.9rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+}
+.sonidero .badge { background: var(--badge-sonidero); }
+.helados .badge { background: var(--badge-helados); }
+.ambos .badge { background: var(--badge-combo); }
+
+.description {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.media-section {
+    margin: 2rem 0;
+}
+.media-section h3 {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: flex-start;
+}
+.gallery-item {
+    width: 180px;
+    cursor: pointer;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--bg-body);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s;
+}
+.gallery-item:hover {
+    transform: scale(0.98);
+}
+.gallery-item img, 
+.gallery-item video {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+.gallery-item span, .gallery-item .caption {
+    display: block;
+    padding: 8px;
+    font-size: 0.8rem;
+    text-align: center;
+    background: var(--card-bg);
+}
+
+/* Pantalla completa overlay */
+.fullscreen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.fullscreen-overlay img, 
+.fullscreen-overlay video {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    border-radius: 12px;
+}
+
+/* Pricing */
+.pricing {
+    background: rgba(0,0,0,0.03);
+    padding: 1.2rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    border-left: 4px solid var(--whatsapp);
+}
+body.dark .pricing {
+    background: rgba(255,255,255,0.05);
+}
+.pricing h3 { margin-bottom: 0.8rem; }
+.pricing p { margin: 8px 0; }
+.contact-wa {
+    color: var(--whatsapp);
+    font-weight: bold;
+}
+
+/* Botón WhatsApp flotante */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    background-color: var(--whatsapp);
+    color: white;
+    border-radius: 50px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.2s;
+}
+.whatsapp-float:hover {
+    transform: scale(1.03);
+    background-color: #20b859;
+}
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: var(--header-footer);
+    border-radius: 1rem;
+    color: white;
+}
+footer strong {
+    color: var(--whatsapp);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    body { padding: 0.6rem; }
+    .package { padding: 1.2rem; }
+    .gallery-item { width: 140px; }
+    .gallery-item img, .gallery-item video { height: 120px; }
+    .section-header h2 { font-size: 1.4rem; }
+    .whatsapp-float span { display: none; } /* solo icono en móvil */
+    .whatsapp-float { padding: 12px; border-radius: 60px; }
+    .theme-toggle { top: 10px; right: 10px; padding: 8px 12px; }
+}
+
+@media (max-width: 480px) {
+    .gallery-item { width: calc(50% - 0.6rem); }
+    .gallery-item img, .gallery-item video { height: 140px; }
+}
