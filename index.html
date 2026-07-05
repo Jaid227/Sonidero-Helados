@@ -3,124 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Sonidero & Helados | Música y Sabor</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome (opcional pero útil para iconos) -->
+    <title>SONIDO CHEQUE | Sonidero Profesional</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome 6 (Free Icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-    <!-- Botón modo nocturno/claro -->
-    <button id="themeToggle" class="theme-toggle" aria-label="Cambiar modo claro/oscuro">
-        <i class="fas fa-moon"></i>
-    </button>
+    <!-- Video de fondo -->
+    <div class="video-background">
+        <video autoplay muted loop playsinline id="bgVideo">
+            <source src="imagenes/chequeportada1.jpeg" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
+        <div class="overlay"></div>
+    </div>
 
-    <header>
-        <h1>🎧 Sonidero & 🍦 Helados</h1>
-        <p>Música que mueve, helados que enamoran</p>
-    </header>
+    <!-- Botón Modo Nocturno/Claro -->
+    <button id="themeToggle" class="theme-btn"><i class="fas fa-moon"></i></button>
 
-    <main>
-        <!-- SECCIÓN SONIDERO (solo) -->
-        <section class="package sonidero" id="sonidero">
-            <div class="section-header">
-                <h2><i class="fas fa-headphones"></i> Sonidero</h2>
-                <span class="badge">Exclusivo</span>
-            </div>
-            <p class="description">El mejor sonido para tus eventos: fiestas, quinceañeras, bodas y más. Equipo profesional, mezclas únicas y la energía que necesitas.</p>
-            
-            <!-- Zona de imágenes -->
-            <div class="media-section">
-                <h3>📸 Galería de imágenes</h3>
-                <div class="gallery" data-type="image" data-folder="imagenes/sonidero/">
-                    <!-- Las imágenes se insertarán dinámicamente con JS -->
+    <!-- Contenido Principal -->
+    <main class="content">
+        <h1 class="sonido-titulo">SONIDO CHEQUE</h1>
+        
+        <button id="toggleGalleryBtn" class="btn-primary">📷 VIDEOS Y FOTOS</button>
+        
+        <!-- Galería oculta inicialmente -->
+        <div id="galleryContainer" class="gallery-container hidden">
+            <div class="gallery-grid">
+                <!-- Videos (archivos locales en carpeta videos/) -->
+                <div class="gallery-item video-item" data-type="video">
+                    <video controls preload="metadata">
+                        <source src="videos/sonido1.mp4" type="video/mp4">
+                        Tu navegador no soporta videos HTML5.
+                    </video>
+                </div>
+                <div class="gallery-item video-item" data-type="video">
+                    <video controls preload="metadata">
+                        <source src="videos/sonido2.mp4" type="video/mp4">
+                        Tu navegador no soporta videos HTML5.
+                    </video>
+                </div>
+                <div class="gallery-item video-item" data-type="video">
+                    <video controls preload="metadata">
+                        <source src="videos/helados2.mp4" type="video/mp4">
+                        Tu navegador no soporta videos HTML5.
+                    </video>
+                </div>
+                <!-- Imágenes (archivos locales en carpeta imagenes/) -->
+                <div class="gallery-item img-item" data-type="image">
+                    <img src="imagenes/cheque1.jpeg" alt="Fiesta 1">
+                </div>
+                <div class="gallery-item img-item" data-type="image">
+                    <img src="imagenes/cheque2.jpeg" alt="Fiesta 2">
+                </div>
+                <div class="gallery-item img-item" data-type="image">
+                    <img src="imagenes/cheque3.jpeg" alt="Sonido Cheque Evento">
+                </div>
+                <div class="gallery-item img-item" data-type="image">
+                    <img src="imagenes/cheque4.jpeg" alt="Caballete">
+                </div>
+                <div class="gallery-item img-item" data-type="image">
+                    <img src="imagenes/cheque5.jpeg" alt="Fiesta 1">
+                </div>
+                <div class="gallery-item img-item" data-type="image">
+                    <img src="imagenes/cheque6.jpeg" alt="Fiesta 2">
+                </div>
+                <div class="gallery-item img-item" data-type="image">
+                    <img src="imagenes/cheque7.jpeg" alt="Sonido Cheque Evento">
+                </div>
+                <div class="gallery-item img-item" data-type="image">
+                    <img src="imagenes/cheque8.jpeg" alt="Caballete">
+                </div>
+                <div class="gallery-item img-item" data-type="image">
+                    <img src="imagenes/helado1.jpeg" alt="Fiesta 1">
+                </div>
+                <div class="gallery-item img-item" data-type="image">
+                    <img src="imagenes/helado2.jpeg" alt="Fiesta 2">
+                </div>
+                <div class="gallery-item img-item" data-type="image">
+                    <img src="imagenes/helado3.jpeg" alt="Sonido Cheque Evento">
+                </div>
+                <div class="gallery-item img-item" data-type="image">
+                    <img src="imagenes/chequeportada2.jpeg" alt="Caballete">
                 </div>
             </div>
-
-            <!-- Zona de videos -->
-            <div class="media-section">
-                <h3>🎥 Videos destacados</h3>
-                <div class="gallery" data-type="video" data-folder="videos/sonidero/">
-                    <!-- Videos dinámicos -->
-                </div>
-            </div>
-
-            <div class="pricing">
-                <h3>💰 Costos</h3>
-                <p><strong>Paquete básico:</strong> $4,500 MXN (4 horas, sonido profesional+DJ)</p>
-                <p><strong>Paquete premium:</strong> $7,500 MXN (6 horas, incluye luces y pantalla)</p>
-                <p><i class="fab fa-whatsapp"></i> Cotiza tu evento especial</p>
-            </div>
-        </section>
-
-        <!-- SECCIÓN HELADOS (solo) -->
-        <section class="package helados" id="helados">
-            <div class="section-header">
-                <h2><i class="fas fa-ice-cream"></i> Helados</h2>
-                <span class="badge">Exclusivo</span>
-            </div>
-            <p class="description">Helados artesanales, cremosos y con sabores únicos. Desde clásicos hasta combinaciones sorprendentes. Perfectos para cualquier ocasión.</p>
-            
-            <div class="media-section">
-                <h3>📸 Galería de imágenes</h3>
-                <div class="gallery" data-type="image" data-folder="imagenes/helados/">
-                </div>
-            </div>
-
-            <div class="media-section">
-                <h3>🎥 Videos de preparación</h3>
-                <div class="gallery" data-type="video" data-folder="videos/helados/">
-                </div>
-            </div>
-
-            <div class="pricing">
-                <h3>💰 Costos</h3>
-                <p><strong>Vaso sencillo:</strong> $45 MXN</p>
-                <p><strong>Cono doble:</strong> $65 MXN</p>
-                <p><strong>Evento para 50 personas:</strong> $2,800 MXN (barra libre de helados)</p>
-            </div>
-        </section>
-
-        <!-- SECCIÓN AMBOS: Sonidero + Helados (paquete combinado) -->
-        <section class="package ambos" id="ambos">
-            <div class="section-header">
-                <h2><i class="fas fa-handshake"></i> Sonidero + Helados</h2>
-                <span class="badge combo">COMBO ESPECIAL</span>
-            </div>
-            <p class="description">¡La combinación perfecta! Música en vivo + degustación de helados para tus invitados. Ideal para ferias, cumpleaños infantiles o eventos corporativos.</p>
-            
-            <div class="media-section">
-                <h3>📸 Momentos Sonidero & Helados</h3>
-                <div class="gallery" data-type="image" data-folder="imagenes/ambos/">
-                </div>
-            </div>
-
-            <div class="media-section">
-                <h3>🎥 Video promocional</h3>
-                <div class="gallery" data-type="video" data-folder="videos/ambos/">
-                </div>
-            </div>
-
-            <div class="pricing">
-                <h3>💰 Costo del paquete combinado</h3>
-                <p><strong>Pack Fiesta Total:</strong> $10,999 MXN</p>
-                <p>Incluye: 5 horas de sonidero profesional + 100 helados surtidos + 1 mesa dulce. ¡Ahorras más de $1,500!</p>
-                <p class="contact-wa"><i class="fab fa-whatsapp"></i> Reserva ahora con el 20% de anticipo</p>
-            </div>
-        </section>
-
-        <!-- Botón flotante de WhatsApp -->
-        <a href="https://wa.me/525591461227?text=Hola%2C%20vi%20su%20p%C3%A1gina%20de%20Sonidero%20y%20Helados%20y%20me%20interesa%20cotizar" 
-           class="whatsapp-float" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-            <span>¡Contáctanos!</span>
+        </div>
+        
+        <!-- Sección Paquete de Helados -->
+        <div class="helados-section">
+            <h2><i class="fas fa-ice-cream"></i> PAQUETE DE HELADOS PARA TU FIESTA</h2>
+            <p>Endulza tu evento con nuestro exclusivo paquete de helados artesanales. ¡Pregunta por promociones!</p>
+        </div>
+        
+        <!-- Botón WhatsApp -->
+        <a href="https://wa.me/5638305597?text=Hola%20SONIDO%20CHEQUE,%20quisiera%20informes%20sobre%20sus%20servicios%20y%20paquete%20de%20helados." target="_blank" class="btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> INFORMES POR WHATSAPP
         </a>
+        
+        <!-- Redes Sociales -->
+        <div class="social-icons">
+            <a href="https://www.facebook.com/sonidocheque" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.tiktok.com/@sonidocheque2" target="_blank" class="social-link"><i class="fab fa-tiktok"></i></a>
+        </div>
+        
+        <!-- Footer con enlace estratégico -->
+        <footer class="footer">
+            <a href="https://jaid227.github.io/EntropiaDigital/" target="_blank" id="copyrightLink">
+                © 2026 Mandrágora Entrópica | Desarrollo Web Estratégico
+            </a>
+        </footer>
     </main>
 
-    <footer>
-        <p>© 2025 Sonidero & Helados - Música y sabor para todos</p>
-        <p>WhatsApp: <strong>55 9146 1227</strong></p>
-    </footer>
+    <!-- Modal para pantalla completa de imágenes y videos -->
+    <div id="fullscreenModal" class="fullscreen-modal">
+        <div id="fullscreenContent" class="fullscreen-content">
+            <!-- Aquí se cargará dinámicamente la imagen o video -->
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
